@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 | Frontend       | HTML5, CSS3, JavaScript (ES6+)                 |
 | Arquitectura   | Vanilla JS Single Page Application (SPA)       |
 | Persistencia   | Web Storage API (LocalStorage)                 |
-| Pagos          | Stripe API & PayPal SDK                        |
+| Pagos          | Stripe API                                     |
 | Hosting        | AwardSpace                                     |
 
 ---
@@ -148,7 +148,7 @@ git clone https://github.com
 
 ### Configuración
 
-- Añadir las API Keys de Stripe y PayPal en los archivos JavaScript.
+- Añadir las API Keys de Stripe en los archivos JavaScript.
 
 ### Ejecución
 
@@ -171,7 +171,8 @@ Enfoque en crear experiencias web eficientes y soluciones de negocio reales medi
 
 <img width="1919" height="828" alt="image" src="https://github.com/user-attachments/assets/97055820-412e-4007-871b-b97028ef2e22" />
 
-<img width="1919" height="820" alt="image" src="https://github.com/user-attachments/assets/6c0406f8-01e1-45a7-b92f-273eff17df41" />
+<img width="1919" height="823" alt="image" src="https://github.com/user-attachments/assets/df1695d8-de74-4554-a62e-c0d42295329e" />
 
-<img width="1919" height="830" alt="image" src="https://github.com/user-attachments/assets/766a708e-68f5-45db-91dc-eaea164d7fe0" />
+
+<img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/54ba83ca-0726-4bd3-8b8c-f5b906412472" />
 
