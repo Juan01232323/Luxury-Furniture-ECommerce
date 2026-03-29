@@ -205,6 +205,7 @@ const cart = JSON.parse(localStorage.getItem(`cart-${userSessionId}`)) || [];
         // Si el carrito no está vacío, ocultar el mensaje de error y mostrar la sección de pago
         document.getElementById('cart-empty-message').style.display = 'none';
         showPaymentSection();
+      setTimeout(renderPayPalButton, 200);
     }
 });
 
@@ -216,12 +217,20 @@ function showPaymentSection() {
   // Mostrar la sección de opciones de pago
   document.getElementById('payment-options-section').style.display = 'block';
 }
-  setTimeout(() => {
-  document.getElementById('paypal-button-container').innerHTML = '';
+
+});
+
+
+function renderPayPalButton() {
+  const container = document.getElementById('paypal-button-container');
+
+  if (!container) return;
+
+  container.innerHTML = '';
 
   paypal.Buttons({
     createOrder: function(data, actions) {
-      const total = calcularTotal().toFixed(2);
+      const total = calcularTotal();
 
       return actions.order.create({
         purchase_units: [{
@@ -247,10 +256,7 @@ function showPaymentSection() {
     }
 
   }).render('#paypal-button-container');
-
-}, 300);
-});
-
+}
 
 document.getElementById('pay-with-stripe').addEventListener('click', (event) => {
   // Ocultar secciones innecesarias y mostrar el formulario de Stripe.
