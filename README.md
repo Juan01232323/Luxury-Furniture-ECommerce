@@ -20,7 +20,7 @@ Basado en la organización de archivos del repositorio:
 - **Arquitectura SPA:** Navegación fluida entre secciones (Inicio, Productos, Carrito) sin recarga de página.
 - **Gestión de Estado Persistente:** Carrito de compras vinculado a sesiones únicas mediante `localStorage`.
 - **Lógica de Producto Dinámica:** Cambio automático de imágenes y validación de disponibilidad según el color seleccionado.
-- **Checkout Seguro:** Integración con pasarelas de pago de **Stripe** y **PayPal**.
+- **Checkout Seguro:** Integración con pasarelas de pago de **Stripe**.
 - **Diseño Responsive:** Total adaptabilidad a dispositivos móviles y escritorio.
 
 ---
