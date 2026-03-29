@@ -88,9 +88,9 @@ const cart = JSON.parse(localStorage.getItem(`cart-${userSessionId}`)) || [];
     }
   });
 
-  function calcularTotal() {
-    return cart.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
-  }
+function calcularTotal() {
+  return cart.reduce((total, product) => total + product.price * product.quantity, 0);
+}
 
   function getSessionId() {
     let sessionId = localStorage.getItem('userSessionId');
