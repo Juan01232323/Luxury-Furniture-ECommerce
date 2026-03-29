@@ -1,4 +1,4 @@
-# 🛋️ Luxury Furniture E-commerce: Full Stack JavaScript Solution
+# 🛋️ Luxury Furniture E-commerce: Full Stack Developer
 
 Este proyecto es una plataforma de comercio electrónico de alta gama desarrollada para una empresa de muebles de lujo. El sistema destaca por una arquitectura **Single Page Application (SPA)** y un motor de gestión de estado construido íntegramente con **JavaScript nativo (ES6+)**, eliminando la dependencia de frameworks externos y optimizando el rendimiento.
 
