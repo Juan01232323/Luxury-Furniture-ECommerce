@@ -168,3 +168,10 @@ Enfoque en crear experiencias web eficientes y soluciones de negocio reales medi
 <img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/a70cf259-68f1-49a3-ad06-87e1e2eda4bd" />
 
 <img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/ee8030c4-e404-43b9-bddd-49599a950e2c" />
+
+<img width="1919" height="828" alt="image" src="https://github.com/user-attachments/assets/97055820-412e-4007-871b-b97028ef2e22" />
+
+<img width="1919" height="820" alt="image" src="https://github.com/user-attachments/assets/6c0406f8-01e1-45a7-b92f-273eff17df41" />
+
+<img width="1919" height="830" alt="image" src="https://github.com/user-attachments/assets/766a708e-68f5-45db-91dc-eaea164d7fe0" />
+
