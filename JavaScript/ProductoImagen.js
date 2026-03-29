@@ -88,9 +88,9 @@ const cart = JSON.parse(localStorage.getItem(`cart-${userSessionId}`)) || [];
     }
   });
 
-function calcularTotal() {
-  return cart.reduce((total, product) => total + product.price * product.quantity, 0);
-}
+  function calcularTotal() {
+    return cart.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+  }
 
   function getSessionId() {
     let sessionId = localStorage.getItem('userSessionId');
@@ -211,44 +211,14 @@ function calcularTotal() {
 
 
 function showPaymentSection() {
+  // Ocultar todas las secciones innecesarias
   ocultarTodasLasSecciones();
-
-  const paymentSection = document.getElementById('payment-options-section');
-  paymentSection.style.display = 'block';
-
-  // Limpiar contenedor (IMPORTANTE para evitar duplicados)
-  document.getElementById('paypal-button-container').innerHTML = '';
-
-  paypal.Buttons({
-    createOrder: function(data, actions) {
-      const total = calcularTotal().toFixed(2);
-
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: total
-          }
-        }]
-      });
-    },
-
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('Pago completado por ' + details.payer.name.given_name);
-
-        // Limpiar carrito
-        localStorage.removeItem(`cart-${userSessionId}`);
-        location.reload();
-      });
-    },
-
-    onError: function(err) {
-      console.error(err);
-      alert('Error en el pago');
-    }
-
-  }).render('#paypal-button-container');
+  // Mostrar la sección de opciones de pago
+  document.getElementById('payment-options-section').style.display = 'block';
 }
+});
+
+
 document.getElementById('pay-with-stripe').addEventListener('click', (event) => {
   // Ocultar secciones innecesarias y mostrar el formulario de Stripe.
   ocultarTodasLasSecciones();
@@ -308,6 +278,10 @@ document.getElementById('pay-with-stripe').addEventListener('click', (event) => 
   });
 });
 
+document.getElementById('pay-with-mercadopago').addEventListener('click', (event) => {
+  // Asegúrate de tener el ID de preferencia correcto configurado en esta URL
+  window.location.href = "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=tu_id_de_preferencia";
+});
 
 
 function mostrarFormularioStripe() {
