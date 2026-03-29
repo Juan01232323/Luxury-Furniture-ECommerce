@@ -211,14 +211,44 @@ function calcularTotal() {
 
 
 function showPaymentSection() {
-  // Ocultar todas las secciones innecesarias
   ocultarTodasLasSecciones();
-  // Mostrar la sección de opciones de pago
-  document.getElementById('payment-options-section').style.display = 'block';
+
+  const paymentSection = document.getElementById('payment-options-section');
+  paymentSection.style.display = 'block';
+
+  // Limpiar contenedor (IMPORTANTE para evitar duplicados)
+  document.getElementById('paypal-button-container').innerHTML = '';
+
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      const total = calcularTotal().toFixed(2);
+
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: total
+          }
+        }]
+      });
+    },
+
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Pago completado por ' + details.payer.name.given_name);
+
+        // Limpiar carrito
+        localStorage.removeItem(`cart-${userSessionId}`);
+        location.reload();
+      });
+    },
+
+    onError: function(err) {
+      console.error(err);
+      alert('Error en el pago');
+    }
+
+  }).render('#paypal-button-container');
 }
-});
-
-
 document.getElementById('pay-with-stripe').addEventListener('click', (event) => {
   // Ocultar secciones innecesarias y mostrar el formulario de Stripe.
   ocultarTodasLasSecciones();
@@ -278,36 +308,6 @@ document.getElementById('pay-with-stripe').addEventListener('click', (event) => 
   });
 });
 
-paypal.Buttons({
-  createOrder: function(data, actions) {
-    // Obtener total del carrito dinámicamente
-    const total = calcularTotal();
-
-    return actions.order.create({
-      purchase_units: [{
-        amount: {
-          value: total // total dinámico
-        }
-      }]
-    });
-  },
-
-  onApprove: function(data, actions) {
-    return actions.order.capture().then(function(details) {
-      alert('Pago completado por ' + details.payer.name.given_name);
-
-      // Aquí puedes limpiar el carrito después del pago
-      localStorage.removeItem(`cart-${userSessionId}`);
-      location.reload();
-    });
-  },
-
-  onError: function(err) {
-    console.error(err);
-    alert('Ocurrió un error con el pago');
-  }
-
-}).render('#paypal-button-container');
 
 
 function mostrarFormularioStripe() {
