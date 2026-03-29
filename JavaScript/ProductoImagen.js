@@ -220,37 +220,6 @@ function showPaymentSection() {
 
 });
 
-function renderPayPalButton() {
-  const container = document.getElementById('paypal-button-container');
-  if (!container) return;
-
-  container.innerHTML = ''; // Limpia para no duplicar botones
-
-  paypal.Buttons({
-    // 1. Configura la transacción
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: calcularTotal() // Llama a tu función que ya tienes definida
-          }
-        }]
-      });
-    },
-    // 2. Qué pasa cuando el pago es exitoso
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('¡Pago realizado con éxito por ' + details.payer.name.given_name + '!');
-        // Aquí podrías vaciar el carrito si quieres
-      });
-    },
-    // 3. Manejo de errores
-    onError: function(err) {
-      console.error('Error en PayPal:', err);
-      alert('Hubo un problema con el pago, por favor intenta de nuevo.');
-    }
-  }).render('#paypal-button-container');
-}
 
 document.getElementById('pay-with-stripe').addEventListener('click', (event) => {
   // Ocultar secciones innecesarias y mostrar el formulario de Stripe.
