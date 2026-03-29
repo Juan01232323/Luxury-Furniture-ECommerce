@@ -278,10 +278,36 @@ document.getElementById('pay-with-stripe').addEventListener('click', (event) => 
   });
 });
 
-document.getElementById('pay-with-mercadopago').addEventListener('click', (event) => {
-  // Asegúrate de tener el ID de preferencia correcto configurado en esta URL
-  window.location.href = "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=tu_id_de_preferencia";
-});
+paypal.Buttons({
+  createOrder: function(data, actions) {
+    // Obtener total del carrito dinámicamente
+    const total = calcularTotal();
+
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: total // total dinámico
+        }
+      }]
+    });
+  },
+
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      alert('Pago completado por ' + details.payer.name.given_name);
+
+      // Aquí puedes limpiar el carrito después del pago
+      localStorage.removeItem(`cart-${userSessionId}`);
+      location.reload();
+    });
+  },
+
+  onError: function(err) {
+    console.error(err);
+    alert('Ocurrió un error con el pago');
+  }
+
+}).render('#paypal-button-container');
 
 
 function mostrarFormularioStripe() {
