@@ -163,3 +163,8 @@ git clone https://github.com
 Desarrollado por **Juan – Full Stack Developer**  
 
 Enfoque en crear experiencias web eficientes y soluciones de negocio reales mediante el uso avanzado de JavaScript.
+
+
+<img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/a70cf259-68f1-49a3-ad06-87e1e2eda4bd" />
+
+<img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/ee8030c4-e404-43b9-bddd-49599a950e2c" />
