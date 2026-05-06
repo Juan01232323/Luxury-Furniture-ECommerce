@@ -1,37 +1,44 @@
 # 🛋️ Luxury Furniture E-commerce: Full Stack Developer
 
-Este proyecto es una plataforma de comercio electrónico de alta gama desarrollada para una empresa de muebles de lujo. El sistema destaca por una arquitectura **Single Page Application (SPA)** y un motor de gestión de estado construido íntegramente con **JavaScript nativo (ES6+)**, eliminando la dependencia de frameworks externos y optimizando el rendimiento.
+This project is a high-end e-commerce platform developed for a luxury furniture company. The system features a **Single Page Application (SPA)** architecture and a state management engine built entirely with **native JavaScript (ES6+)**, eliminating dependencies on external frameworks and optimizing performance.
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
+![SPA](https://img.shields.io/badge/SPA-Single--Page--App-blue?style=for-the-badge)
+---
+
+
+
+## 📂 Project Structure
+
+Based on the repository's file organization:
+
+- 📁 **JavaScript/**: Contains the core business logic, cart management, and SPA routing (e.g., `ProductoImagen.js`).
+- 📁 **img/**: Repository for visual assets and high-quality photography of luxury products.
+- 📄 **estilos.css**: Custom stylesheet for a premium and responsive user interface.
+- 📄 **index.html**: Main structure and entry point of the application.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🚀 Key Features
 
-Basado en la organización de archivos del repositorio:
-
-- 📁 **JavaScript/**: Contiene la lógica central del negocio, gestión de carrito y ruteo SPA (ej. `ProductoImagen.js`).
-- 📁 **img/**: Repositorio de recursos visuales y fotografías de los productos de lujo.
-- 📄 **estilos.css**: Hoja de estilos personalizada para una interfaz de usuario premium y responsive.
-- 📄 **index.html**: Estructura principal y punto de entrada de la aplicación.
-
----
-
-## 🚀 Funcionalidades Clave
-
-- **Arquitectura SPA:** Navegación fluida entre secciones (Inicio, Productos, Carrito) sin recarga de página.
-- **Gestión de Estado Persistente:** Carrito de compras vinculado a sesiones únicas mediante `localStorage`.
-- **Lógica de Producto Dinámica:** Cambio automático de imágenes y validación de disponibilidad según el color seleccionado.
-- **Checkout Seguro:** Integración con pasarelas de pago de **Stripe**.
-- **Diseño Responsive:** Total adaptabilidad a dispositivos móviles y escritorio.
+- **SPA Architecture:** Seamless navigation between sections (Home, Products, Cart) without page reloads.
+- **Persistent State Management:** Shopping cart linked to unique sessions using `localStorage`.
+- **Dynamic Product Logic:** Automatic image switching and availability validation based on the selected color.
+- **Secure Checkout:** Integration with **Stripe** payment gateways.
+- **Responsive Design:** Full adaptability to mobile and desktop devices.
 
 ---
 
-## 🛠️ Implementación Técnica (Highlights)
+## 🛠️ Technical Implementation (Highlights)
 
-He diseñado el sistema enfocándome en dos pilares fundamentales de JavaScript:
+I designed the system focusing on two fundamental pillars of JavaScript:
 
-### 1. Gestión del Carrito y Persistencia de Datos
+### 1. Cart Management and Data Persistence
 
-Este bloque maneja la creación de sesiones únicas, guardado en `localStorage`, cálculo de totales y la actualización dinámica de productos según los colores seleccionados.
+This block handles the creation of unique sessions, saving to `localStorage`, total calculations, and dynamic product updates based on selected colors.
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
@@ -86,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-### 2. Arquitectura de Navegación SPA (Nativo)
+### 2. SPA Navigation Architecture (Native)
 
-Gestión de la experiencia de usuario (UX) mediante la manipulación del DOM y desplazamientos suaves (Smooth Scrolling), controlando la visibilidad de las secciones de forma reactiva.
+User Experience (UX) management through DOM manipulation and smooth scrolling, reactively controlling the visibility of sections.
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
@@ -126,43 +133,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Tech Stack
 
-| Componente      | Tecnología                                      |
+
+
+| Component | Technology |
 |----------------|------------------------------------------------|
-| Frontend       | HTML5, CSS3, JavaScript (ES6+)                 |
-| Arquitectura   | Vanilla JS Single Page Application (SPA)       |
-| Persistencia   | Web Storage API (LocalStorage)                 |
-| Pagos          | Stripe API                                     |
-| Hosting        | AwardSpace                                     |
+| Frontend | HTML5, CSS3, JavaScript (ES6+) |
+| Architecture | Vanilla JS Single Page Application (SPA) |
+| Persistence | Web Storage API (LocalStorage) |
+| Payments | Stripe API |
+| Hosting | AwardSpace |
 
 ---
 
-## 🚀 Instalación y Despliegue
+## 🚀 Installation and Deployment
 
-### Clonar el repositorio
+### Clone the repository
 
 ```bash
 git clone https://github.com
 ```
 
-### Configuración
+### Configuration
 
-- Añadir las API Keys de Stripe en los archivos JavaScript.
+- Add your Stripe API Keys in the JavaScript files.
 
-### Ejecución
+### Execution
 
-- Abrir `index.html` en cualquier navegador  
-**o**
-- Subir los archivos a un hosting como AwardSpace.
+- Open `index.html` in any browser
+**or**
+- Upload the files to a hosting provider like AwardSpace.
 
 ---
 
-## 📬 Contacto
+## 📬 Contact
 
-Desarrollado por **Juan – Full Stack Developer**  
+Developed by **Juan – Full Stack Developer**
 
-Enfoque en crear experiencias web eficientes y soluciones de negocio reales mediante el uso avanzado de JavaScript.
+Focused on creating efficient web experiences and real business solutions through advanced JavaScript usage.
 
 
 <img width="1919" height="824" alt="image" src="https://github.com/user-attachments/assets/a70cf259-68f1-49a3-ad06-87e1e2eda4bd" />
